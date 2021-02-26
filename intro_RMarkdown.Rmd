@@ -1,0 +1,46 @@
+---
+title: "Intro to RMarkdown"
+output: html_document
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Header1
+
+### Header2
+
+#### Hearder3
+
+*I want to print this sentence in italic* !!!
+
+-   List 1
+-   List 2
+-   List 2a
+-   List 2b
+
+```{r}
+temp <-1:10
+temp
+plot(temp)
+```
+
+```{r code1, echo=}
+library(readr)
+bg_chem <- read_csv("BGchem2008data.csv")
+
+mean_NO3 <- mean(bg_chem$NO3)
+mean_NO3
+
+mean_NO2 <- mean(bg_chem$NO2)
+mean_NO2
+
+mean_NH4 <- mean(bg_chem$NH4)
+mean_NH4
+
+mean_P <- mean(bg_chem$P)
+mean_P
+
+```
