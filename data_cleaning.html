@@ -195,7 +195,12 @@ summary {
 <pre class="r"><code>library(dplyr)
 library(tidyr)
 library(readr)</code></pre>
-<pre class="r"><code>catch_original &lt;- read_csv(&quot;https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1&quot;)</code></pre>
+<pre class="r"><code>catch_original &lt;- read_csv(&quot;https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1&quot;)
+catch_select &lt;- catch_original %&gt;%
+  select(-All,-notesRegCode) %&gt;%
+  mutate(Chinook = ifelse(Chinook == &quot;I&quot;, 1, Chinook),
+         Chinook = as.numeric(Chinook)) %&gt;%
+  pivot_longer(cols = -c(Region, Year), names_to = &quot;species&quot;, values_to = &quot;catch&quot;)</code></pre>
 
 
 
