@@ -6,3 +6,7 @@ output: html_document
 ---
 
 Hello
+
+The modules I have gotten through:
+
+ - [Session 8: Data Cleaning](data_cleaning.html)
