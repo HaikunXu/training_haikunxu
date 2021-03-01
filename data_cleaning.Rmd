@@ -28,4 +28,3 @@ catch_select <- catch_original %>%
 ggplot(data=catch_select) +
   geom_point(aes(x=Year,y=catch,color=species))
 ```
-
