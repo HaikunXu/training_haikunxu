@@ -1,0 +1,31 @@
+---
+title: "Data cleaning"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message = FALSE}
+library(dplyr)
+library(tidyr)
+library(readr)
+```
+
+```{r, message=FALSE}
+catch_original <- read_csv("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1")
+catch_select <- catch_original %>%
+  select(-All,-notesRegCode) %>%
+  mutate(Chinook = ifelse(Chinook == "I", 1, Chinook),
+         Chinook = as.numeric(Chinook)) %>%
+  pivot_longer(cols = -c(Region, Year), names_to = "species", values_to = "catch")
+```
+
+```{r}
+ggplot(data=catch_select) +
+  geom_point(aes(x=Year,y=catch,color=species))
+```
+
