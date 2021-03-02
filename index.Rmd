@@ -12,3 +12,4 @@ The modules I have gotten through:
  - [Session 8: Data Cleaning](data_cleaning.html)
  - [Read this](intro_RMarkdown.html)
  - [My great plots](Data_Viz.html)
+ - [Try adding a gif](giphy.gif)
