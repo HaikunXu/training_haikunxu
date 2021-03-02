@@ -13,3 +13,5 @@ The modules I have gotten through:
  - [Read this](intro_RMarkdown.html)
  - [My great plots](Data_Viz.html)
  - [Try adding a gif](giphy.gif)
+ 
+ ![Try adding a gif](giphy.gif)
